@@ -15,23 +15,16 @@ namespace MVCAppDataLearning.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult CreateNewEmployee(string firstName, string lastName, string emailAddress)
         {
-            ViewBag.Message = "Your application description page.";
+            int recordsCreated = CreateEmployee(firstName, lastName, emailAddress);
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(recordsCreated);
         }
 
         public ActionResult ViewEmployees()
         {
-            var data = LoadAllEmployees();
+            var data = ReadAllEmployees();
             List<EmployeeModel> employees = new List<EmployeeModel>();
 
             foreach (var row in data)

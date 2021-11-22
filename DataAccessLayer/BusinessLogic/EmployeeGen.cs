@@ -10,13 +10,36 @@ namespace DataAccessLayer.BusinessLogic
 {
     public static class EmployeeGen
     {
-        public static List<EmployeeModel> LoadAllEmployees()
+        public static int CreateEmployee(string firstName, string lastName, string emailAddress)
+        {
+            EmployeeModel data = new EmployeeModel
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                EmailAddress = emailAddress
+            };
+
+            string sql = "dbo.Create_Employee @FirstName, @LastName, @EmailAddress";
+
+            return SqlDataAccess.SaveData(sql, data);
+        }
+
+        public static List<EmployeeModel> ReadAllEmployees()
         {
             string sql = "dbo.Select_All_Employees";
 
             return SqlDataAccess.LoadData<EmployeeModel>(sql);
         }
 
-        public static 
+        public static int UpdateEmployee()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static int DeleteEmployee()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
