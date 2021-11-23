@@ -10,13 +10,12 @@
 
 function CreateEmployee(firstName, lastName, emailAddress) {
     $.ajax({
-        url: "CreateNewEmployee/",
+        type: "POST",
+        url: "InsertEmployee/",
         data: {
             firstName: firstName,
             lastName: lastName,
             emailAddress: emailAddress,
-        },
-        success: console.log("Record added sucessfully"),
-        error: console.log("Failed to insert new record")
+        }
     });
 }

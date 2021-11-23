@@ -7,5 +7,5 @@
 <h2>ViewEmployees</h2>
 
 @foreach (var item in Model) {
-    <div><span>@Html.DisplayFor(modelItem => item.Employee_Id)</span></div>
+    <div><span class="ml-3">@Html.DisplayFor(modelItem => item.Employee_Id)</span><span>@Html.DisplayFor(modelItem => item.FirstName)</span></div>
 }

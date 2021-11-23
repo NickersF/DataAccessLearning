@@ -16,10 +16,14 @@ namespace MVCAppDataLearning.Controllers
         }
 
         public ActionResult CreateNewEmployee(string firstName, string lastName, string emailAddress)
-        {
-            int recordsCreated = CreateEmployee(firstName, lastName, emailAddress);
+        { 
+            return View();
+        }
 
-            return View(recordsCreated);
+        [HttpPost]
+        public void InsertEmployee(string firstName, string lastName, string emailAddress)
+        {
+            CreateEmployee(firstName, lastName, emailAddress);
         }
 
         public ActionResult ViewEmployees()
