@@ -23,7 +23,8 @@ namespace MVCAppDataLearning
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/customjs").Include(
-                      "~/Custom_JS/CreateEmployee.js"));
+                      "~/Custom_JS/CreateEmployee.js",
+                      "~/Custom_JS/UpdateEmployee.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

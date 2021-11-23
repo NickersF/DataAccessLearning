@@ -31,9 +31,18 @@ namespace DataAccessLayer.BusinessLogic
             return SqlDataAccess.LoadData<EmployeeModel>(sql);
         }
 
-        public static int UpdateEmployee()
+        public static int UpdateEmployee(string firstName, string lastName, string emailAddress)
         {
-            throw new NotImplementedException();
+            EmployeeModel data = new EmployeeModel
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                EmailAddress = emailAddress
+            };
+
+            string sql = "dbo.Update_Employee @FirstName, @LastName, @EmailAddress";
+
+            return SqlDataAccess.SaveData(sql, data);
         }
 
         public static int DeleteEmployee()

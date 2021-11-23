@@ -15,15 +15,14 @@ namespace MVCAppDataLearning.Controllers
             return View();
         }
 
-        public ActionResult CreateNewEmployee(string firstName, string lastName, string emailAddress)
+        public ActionResult CreateNewEmployee()
         { 
             return View();
         }
 
-        [HttpPost]
-        public void InsertEmployee(string firstName, string lastName, string emailAddress)
+        public ActionResult UpdateExistingEmployee()
         {
-            CreateEmployee(firstName, lastName, emailAddress);
+            return View();
         }
 
         public ActionResult ViewEmployees()
@@ -43,6 +42,18 @@ namespace MVCAppDataLearning.Controllers
             }
 
             return View(employees);
+        }
+
+        [HttpPost]
+        public void InsertEmployee(string firstName, string lastName, string emailAddress)
+        {
+            CreateEmployee(firstName, lastName, emailAddress);
+        }
+
+        [HttpPost]
+        public void UpdateSingleEmployee(string firstName, string lastName, string emailAddress)
+        {
+            UpdateEmployee(firstName, lastName, emailAddress);
         }
     }
 }
