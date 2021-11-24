@@ -11,7 +11,7 @@
 function UpdateEmployee(firstName, lastName, emailAddress) {
     $.ajax({
         type: "POST",
-        url: "UpdateSingleEmployee/",
+        url: "UpdateEmployee/",
         data: {
             firstName: firstName,
             lastName: lastName,

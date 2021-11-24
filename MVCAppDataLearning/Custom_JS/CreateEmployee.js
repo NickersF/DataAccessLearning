@@ -11,7 +11,7 @@
 function CreateEmployee(firstName, lastName, emailAddress) {
     $.ajax({
         type: "POST",
-        url: "InsertEmployee/",
+        url: "CreateEmployee/",
         data: {
             firstName: firstName,
             lastName: lastName,

@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using static DataAccessLayer.BusinessLogic.EmployeeGen;
+using DataAccessLayer.BusinessLogic;
 
 namespace MVCAppDataLearning.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             return View();
@@ -27,7 +28,7 @@ namespace MVCAppDataLearning.Controllers
 
         public ActionResult ViewEmployees()
         {
-            var data = ReadAllEmployees();
+            var data = EmployeeGen.ReadAllEmployees();
             List<EmployeeModel> employees = new List<EmployeeModel>();
 
             foreach (var row in data)
@@ -45,15 +46,22 @@ namespace MVCAppDataLearning.Controllers
         }
 
         [HttpPost]
-        public void InsertEmployee(string firstName, string lastName, string emailAddress)
+        public void CreateEmployee(string firstName, string lastName, string emailAddress)
         {
-            CreateEmployee(firstName, lastName, emailAddress);
+            EmployeeGen.CreateEmployee(firstName, lastName, emailAddress);
+        }
+
+        [HttpGet]
+        public JsonResult ReadEmployees()
+        {
+            var data = EmployeeGen.ReadAllEmployees();
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public void UpdateSingleEmployee(string firstName, string lastName, string emailAddress)
+        public void UpdateEmployee(string firstName, string lastName, string emailAddress)
         {
-            UpdateEmployee(firstName, lastName, emailAddress);
+            EmployeeGen.UpdateEmployee(firstName, lastName, emailAddress);
         }
     }
 }
