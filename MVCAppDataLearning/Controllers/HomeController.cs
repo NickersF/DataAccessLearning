@@ -16,35 +16,6 @@ namespace MVCAppDataLearning.Controllers
             return View();
         }
 
-        public ActionResult CreateNewEmployee()
-        { 
-            return View();
-        }
-
-        public ActionResult UpdateExistingEmployee()
-        {
-            return View();
-        }
-
-        public ActionResult ViewEmployees()
-        {
-            var data = EmployeeGen.ReadAllEmployees();
-            List<EmployeeModel> employees = new List<EmployeeModel>();
-
-            foreach (var row in data)
-            {
-                employees.Add(new EmployeeModel
-                {
-                    Employee_Id = row.Employee_Id,
-                    FirstName = row.FirstName,
-                    LastName = row.LastName,
-                    EmailAddress = row.EmailAddress
-                });
-            }
-
-            return View(employees);
-        }
-
         [HttpPost]
         public void CreateEmployee(string firstName, string lastName, string emailAddress)
         {
