@@ -63,7 +63,7 @@
 function CreateEmployee(firstName, lastName, emailAddress) {
     $.ajax({
         type: "POST",
-        url: "CreateEmployee/",
+        url: "/Home/CreateEmployee/",
         data: {
             firstName: firstName,
             lastName: lastName,
@@ -88,7 +88,7 @@ function ReadEmployees() {
 function UpdateEmployee(employeeId, firstName, lastName, emailAddress) {
     $.ajax({
         type: "POST",
-        url: "UpdateEmployee/",
+        url: "/Home/UpdateEmployee/",
         data: {
             employeeId: employeeId,
             firstName: firstName,
@@ -101,7 +101,7 @@ function UpdateEmployee(employeeId, firstName, lastName, emailAddress) {
 function DeleteEmployee(employeeId) {
     $.ajax({
         type: "POST",
-        url: "DeleteEmployee/",
+        url: "/Home/DeleteEmployee/",
         data: {
             employeeId: employeeId
         }
