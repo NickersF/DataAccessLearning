@@ -31,23 +31,34 @@ namespace DataAccessLayer.BusinessLogic
             return SqlDataAccess.LoadData<EmployeeModel>(sql);
         }
 
-        public static int UpdateEmployee(string firstName, string lastName, string emailAddress)
+        public static int UpdateEmployee(int employeeId, string firstName, string lastName, string emailAddress)
         {
             EmployeeModel data = new EmployeeModel
             {
+                Employee_Id = employeeId,
                 FirstName = firstName,
                 LastName = lastName,
                 EmailAddress = emailAddress
             };
 
-            string sql = "dbo.Update_Employee @FirstName, @LastName, @EmailAddress";
+            string sql = "dbo.Update_Employee @Employee_Id, @FirstName, @LastName, @EmailAddress";
 
             return SqlDataAccess.SaveData(sql, data);
         }
 
-        public static int DeleteEmployee()
+        public static int DeleteEmployee(int employeeId)
         {
-            throw new NotImplementedException();
+            EmployeeModel data = new EmployeeModel
+            {
+                Employee_Id = employeeId,
+                FirstName = null,
+                LastName = null,
+                EmailAddress = null
+            };
+
+            string sql = "dbo.Delete_Employee @Employee_Id";
+
+            return SqlDataAccess.SaveData(sql, data);
         }
 
     }

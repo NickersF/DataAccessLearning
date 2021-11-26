@@ -30,9 +30,15 @@ namespace MVCAppDataLearning.Controllers
         }
 
         [HttpPost]
-        public void UpdateEmployee(string firstName, string lastName, string emailAddress)
+        public void UpdateEmployee(int employeeId, string firstName, string lastName, string emailAddress)
         {
-            EmployeeGen.UpdateEmployee(firstName, lastName, emailAddress);
+            EmployeeGen.UpdateEmployee(employeeId, firstName, lastName, emailAddress);
+        }
+
+        [HttpPost]
+        public void DeleteEmployee(int employeeId)
+        {
+            EmployeeGen.DeleteEmployee(employeeId);
         }
     }
 }

@@ -25,6 +25,79 @@
         </table>
     </div>
     <div class="col-md-6">
-
+        <div class="row">
+            <div class="col-6">
+                <h4>Add Employee</h4>
+                <form id="CreateForm" method="post" action="">
+                    <div class="mb-3">
+                        <label for="AddFirstName_Input" class="form-label">First Name:</label>
+                        <input id="AddFirstName_Input" type="text" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="AddLastName_Input" class="form-label">Last Name:</label>
+                        <input id="AddLastName_Input" type="text" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="AddEmailAddress_Input" class="form-label">Email Address:</label>
+                        <input id="AddEmailAddress_Input" type="email" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <button id="AddEmployeeSubmit_Btn" type="submit" class="btn btn-primary">Add Employee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4>Update Employee</h4>
+                <form id="UpdateForm" method="post" action="">
+                    <div class="mb-3">
+                        <label for="UpdateEmployeeId_Input" class="form-label">Employee Id:</label>
+                        <input id="UpdateEmployeeId_Input" readonly type="text" class="form-control-plaintext" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="UpdateFirstName_Input" class="form-label">First Name:</label>
+                        <input id="UpdateFirstName_Input" type="text" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="UpdateLastName_Input" class="form-label">Last Name:</label>
+                        <input id="UpdateLastName_Input" type="text" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="UpdateEmailAddress_Input" class="form-label">Email Address:</label>
+                        <input id="UpdateEmailAddress_Input" type="email" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <button id="UpdateEmployeeSubmit_Btn" type="submit" class="btn btn-primary">Update Employee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4>Delete Employee</h4>
+                <form id="DeleteForm" method="post" action="">
+                    <div class="mb-3">
+                        <label for="DeleteEmployeeId_Input" class="form-label">Employee Id:</label>
+                        <input id="DeleteEmployeeId_Input" readonly type="text" class="form-control-plaintext" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="DeleteFirstName_Input" class="form-label">First Name:</label>
+                        <input id="DeleteFirstName_Input" readonly type="text" class="form-control-plaintext" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="DeleteLastName_Input" class="form-label">Last Name:</label>
+                        <input id="DeleteLastName_Input" readonly type="text" class="form-control-plaintext" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="DeleteEmailAddress_Input" class="form-label">Email Address:</label>
+                        <input id="DeleteEmailAddress_Input" readonly type="email" class="form-control-plaintext" />
+                    </div>
+                    <div class="mb-3">
+                        <button id="DeleteEmployeeSubmit_Btn" type="submit" class="btn btn-primary">Delete Employee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
