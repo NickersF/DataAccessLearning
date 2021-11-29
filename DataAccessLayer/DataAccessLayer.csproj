@@ -46,8 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\EmployeeGen.cs" />
+    <Compile Include="BusinessLogic\WorkItemsGen.cs" />
     <Compile Include="DataAccess\SqlDataAccess.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\WorkItemStatusModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

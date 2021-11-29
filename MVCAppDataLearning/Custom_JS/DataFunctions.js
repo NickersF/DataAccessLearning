@@ -7,6 +7,7 @@
     }
 
     ReadEmployees();
+    GetWorkItemsStatusList();
 
     $("#AddEmployeeSubmit_Btn").on("click", function () {
         let firstName = $("#AddFirstName_Input").val();
@@ -76,7 +77,6 @@ function ReadEmployees() {
     $.ajax({
         type: "GET",
         url: "/Home/ReadEmployees/",
-        context: window
     }).done(function (data) {
         for (let i = 0; i < data.length; i++) {
             let newEmployeeRow = "<tr><td>" + data[i].Employee_Id + "</td><td>" + data[i].FirstName + "</td><td>" + data[i].LastName + "</td><td>" + data[i].EmailAddress + "</td></tr>";
@@ -123,5 +123,19 @@ function GetEmployeeRow(employeeRecordObj) {
         employeeRecordObj.emailAddress = rowDataValues[3];
 
         console.log(employeeRecordObj);
+    });
+}
+
+function GetWorkItemsStatusList() {
+    $.ajax({
+        type: "GET",
+        url: "/Home/GetWorkItemsStatusList/",
+    }).done(function (data) {
+        console.log(data);
+
+        for (key in data) {
+            console.log(data[key].WorkItemStatus_Key);
+            console.log(data[key].WorkItemStatus);
+        }
     });
 }

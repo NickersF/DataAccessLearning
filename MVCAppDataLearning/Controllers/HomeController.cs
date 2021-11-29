@@ -40,5 +40,13 @@ namespace MVCAppDataLearning.Controllers
         {
             EmployeeGen.DeleteEmployee(employeeId);
         }
+
+        // Work items methods
+        [HttpGet]
+        public JsonResult GetWorkItemsStatusList()
+        {
+            var data = WorkItemsGen.GetWorkItemsStatusList();
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
     }
 }
